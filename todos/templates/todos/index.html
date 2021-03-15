@@ -1,0 +1,11 @@
+<form action="{% url 'todos:create' %}" method="post">
+    {% csrf_token %}
+    <label for="text">Todo: </label>
+    <input type="text" name="text">
+    <input type="submit">
+</form>
+<ul>
+{% for todo in todo_list %}
+    <li>{{ todo.todo_text }}</li>
+{% endfor %}
+</ul>
