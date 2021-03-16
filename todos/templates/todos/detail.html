@@ -1,1 +1,7 @@
 <p>{{ todo.todo_text }}</p>
+<form action="{% url 'todos:update' todo.id %}" method="post">
+    {% csrf_token %}
+    <label for="text"></label>
+    <input type="text" name="text" value="{{ todo.todo_text }}">
+    <button type="submit">Edit</button>
+</form>

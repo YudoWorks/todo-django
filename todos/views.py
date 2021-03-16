@@ -29,3 +29,11 @@ def create(request):
     todo.save()
 
     return HttpResponseRedirect(reverse('todos:index'))
+
+
+def update(request, todo_id):
+    todo = get_object_or_404(Todo, pk=todo_id)
+    todo.todo_text = request.POST["text"]
+    todo.save()
+
+    return HttpResponseRedirect(reverse('todos:index'))

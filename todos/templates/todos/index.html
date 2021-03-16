@@ -8,7 +8,9 @@
 {% for todo in todo_list %}
     <form action="{% url 'todos:delete' todo.id %}" method="post">
         {% csrf_token %}
-        <li>{{ todo.todo_text }}</li>
+        <a href="{% url 'todos:detail' todo.id %}">
+            <li>{{ todo.todo_text }}</li>
+        </a>
         <button type="submit">Delete</button>
     </form>
 {% endfor %}
