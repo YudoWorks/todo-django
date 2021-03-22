@@ -1,17 +1,17 @@
-<form action="{% url 'todos:create' %}" method="post">
-    {% csrf_token %}
-    <label for="text">Todo: </label>
-    <input type="text" name="text">
-    <input type="submit">
-</form>
+<h1>List of Todo</h1>
+<a href="{% url 'todos:create' %}">Create Todo</a>
 <ul>
-{% for todo in todo_list %}
+    {% for todo in todo_list %}
+    <li>{{ todo.todo_text }}</li>
+    <a href="{% url 'todos:update' todo.id %}">
+        <button>
+            Edit
+        </button>
+    </a>
     <form action="{% url 'todos:delete' todo.id %}" method="post">
         {% csrf_token %}
-        <a href="{% url 'todos:detail' todo.id %}">
-            <li>{{ todo.todo_text }}</li>
-        </a>
         <button type="submit">Delete</button>
     </form>
-{% endfor %}
+    {% endfor %}
 </ul>
+
