@@ -1,17 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
 <h1>List of Todo</h1>
 <a href="{% url 'todos:create' %}">Create Todo</a>
-<ul>
+<div class="todo_list">
     {% for todo in todo_list %}
-    <li>{{ todo.todo_text }}</li>
-    <a href="{% url 'todos:update' todo.id %}">
-        <button>
-            Edit
-        </button>
-    </a>
-    <form action="{% url 'todos:delete' todo.id %}" method="post">
-        {% csrf_token %}
-        <button type="submit">Delete</button>
-    </form>
-    {% endfor %}
-</ul>
+    <div class="todo">
+        <p>{{ todo.todo_text }}</p>
+        <div class="todo--button">
+            <a href="{% url 'todos:update' todo.id %}">
+                <button class="button--update">
+                    Update
+                </button>
+            </a>
+            <form action="{% url 'todos:delete' todo.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="button--delete">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
 

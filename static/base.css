@@ -1,0 +1,55 @@
+body {
+    text-align:center;
+    font-family: 'Roboto', sans-serif;
+    background-color:rgb(171,219,227);
+}
+
+.todo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e7e7e7;
+    margin: 1em;
+    border-radius: 0.5em;
+}
+
+.todo--button {
+    display: flex;
+    flex-direction: flex-direction;
+    margin-left: 1em;
+}
+
+.button--delete {
+  background-color: red;
+  color: black;
+  border-radius: 0.5ch;
+  border: none;
+  margin: 1em;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button--update {
+  background-color: yellow;
+color: black;
+  border-radius: 0.5ch;
+  border: none;
+  margin: 1em;
+  text-align: center;
+  text-decoration: none;
+}
+
+button {
+  background-color: green;
+  color: white;
+  border-radius: 0.5ch;
+  border: none;
+  margin: 1em;
+  text-align: center;
+  text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+

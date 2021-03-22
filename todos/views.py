@@ -49,4 +49,4 @@ def update(request, todo_id):
     else:
         form = TodoForm(instance=todo)
 
-    return render(request, 'todos/detail.html', {"form": form})
+    return render(request, 'todos/update.html', {"form": form})
